@@ -1,9 +1,9 @@
-import 'package:cozyv2/pages/MainPage.dart';
 import 'package:flutter/material.dart';
 import 'package:cozyv2/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class SplashPage extends StatelessWidget {
-  const SplashPage({ Key? key }) : super(key: key);
+  const SplashPage({ super.key });
 
   @override
   Widget build(BuildContext context) {
@@ -22,30 +22,23 @@ class SplashPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Image.asset("assets/images/logo.png", width: 50, height: 50,),
-                  SizedBox(height: 30,),
-                  Text("Find Cozy House\nto Stay and Happy", style: BlackTextStyle.copyWith(fontSize: 24),),
-                  SizedBox(height: 10,),
-                  Text("Stop membuang banyak waktu\npada tempat yang tidak habitable", style: GreyTextStyle.copyWith(fontSize: 16),),
-                  SizedBox(height: 40,),
-                  Container(
+                  const SizedBox(height: 30,),
+                  Text("Find Cozy House\nto Stay and Happy", style: blackTextStyle.copyWith(fontSize: 24),),
+                  const SizedBox(height: 10,),
+                  Text("Stop membuang banyak waktu\npada tempat yang tidak habitable", style: greyTextStyle.copyWith(fontSize: 16),),
+                  const SizedBox(height: 40,),
+                  SizedBox(
                     width: 210,
                     height: 50,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(17)),
-                        primary: PurpleColor
+                        backgroundColor: purpleColor
                       ),
                       onPressed: (){
-                        Navigator.pushReplacement(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context) {
-                              return MainPage();
-                            },
-                          )
-                        );
+                        context.goNamed('homepage');
                       }, 
-                      child: Text("Explore Now", style: WhiteTextStyle.copyWith(fontSize: 18),)
+                      child: Text("Explore Now", style: whiteTextStyle.copyWith(fontSize: 18),)
                     ),
                   )
                 ],

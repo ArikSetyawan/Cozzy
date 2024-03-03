@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cozyv2/theme.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({ Key? key }) : super(key: key);
+  const DetailPage({ super.key });
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +13,11 @@ class DetailPage extends StatelessWidget {
             Image.asset("assets/images/detailroom.png", width: MediaQuery.of(context).size.width, height: 350, fit: BoxFit.cover,),
             ListView(
               children: [
-                SizedBox(height: 328,),
+                const SizedBox(height: 328,),
                 Container(
                   width: MediaQuery.of(context).size.width,
                   height: 604,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.vertical(top: Radius.circular(20))
                   ),
@@ -28,17 +28,17 @@ class DetailPage extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 30,),
-                            Text("Kuretakeso Hott", style: BlackTextStyle.copyWith(fontSize: 22),),
-                            SizedBox(height: 2,),
+                            const SizedBox(height: 30,),
+                            Text("Kuretakeso Hott", style: blackTextStyle.copyWith(fontSize: 22),),
+                            const SizedBox(height: 2,),
                             Text.rich(
                               TextSpan(
                                 text: "\$ 52",
-                                style: PurpleTextStyle,
+                                style: purpleTextStyle,
                                 children: [
                                   TextSpan(
                                     text: " / month",
-                                    style: GreyTextStyle
+                                    style: greyTextStyle
                                   )
                                 ]
                               )
@@ -69,7 +69,7 @@ class DetailPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white
                       ),
-                      child: InkWell(
+                      child: const InkWell(
                         child: Icon(Icons.chevron_left)),
                     ),
                   ),
@@ -86,7 +86,7 @@ class DetailPage extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.white
                       ),
-                      child: InkWell(
+                      child: const InkWell(
                         child: Icon(Icons.favorite_outline)),
                     ),
                   )

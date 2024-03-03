@@ -1,9 +1,9 @@
-import 'package:cozyv2/pages/DetailPage.dart';
 import 'package:flutter/material.dart';
 import 'package:cozyv2/theme.dart';
+import 'package:go_router/go_router.dart';
 
 class SpaceCard extends StatelessWidget {
-  const SpaceCard({ Key? key }) : super(key: key);
+  const SpaceCard({ super.key });
 
   @override
   Widget build(BuildContext context) {
@@ -11,19 +11,16 @@ class SpaceCard extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => DetailPage(),)
-            );
+           context.goNamed('space');
           },
-          child: Container(
+          child: SizedBox(
             width: 329,
             height: 110,
             child: Row(
               children: [
                 ClipRRect(
                   borderRadius: BorderRadius.circular(18),
-                  child: Container(
+                  child: SizedBox(
                     width: 130,
                     height: 110,
                     child: Stack(
@@ -34,49 +31,49 @@ class SpaceCard extends StatelessWidget {
                           child: Container(
                             width: 70,
                             height: 30,
+                            decoration: BoxDecoration(color: purpleColor, borderRadius: const BorderRadius.only(bottomLeft: Radius.circular(25))),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                Icon(Icons.star, color: Colors.amber,),
-                                Text("4/5", style: WhiteTextStyle.copyWith(fontSize: 13),)
+                                const Icon(Icons.star, color: Colors.amber,),
+                                Text("4/5", style: whiteTextStyle.copyWith(fontSize: 13),)
                               ],
                             ),
-                            decoration: BoxDecoration(color: PurpleColor, borderRadius: BorderRadius.only(bottomLeft: Radius.circular(25))),
                           ),
                         )
                       ],
                     ),
                   ),
                 ),
-                SizedBox(width: 20,),
+                const SizedBox(width: 20,),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text("Kuretakeso Hott", style: BlackTextStyle.copyWith(fontSize: 18),),
-                    SizedBox(height: 2,),
+                    Text("Kuretakeso Hott", style: blackTextStyle.copyWith(fontSize: 18),),
+                    const SizedBox(height: 2,),
                     Text.rich(
                       TextSpan(
                         text: "\$ 52",
-                        style: PurpleTextStyle,
+                        style: purpleTextStyle,
                         children: [
                           TextSpan(
                             text: " / month",
-                            style: GreyTextStyle
+                            style: greyTextStyle
                           )
                         ]
                       )
                     ),
-                    SizedBox(height: 16,),
-                    Text("Bandung, Jawa Barat", style: GreyTextStyle,)
+                    const SizedBox(height: 16,),
+                    Text("Bandung, Jawa Barat", style: greyTextStyle,)
                   ],
                 )
               ],
             ),
           ),
         ),
-        SizedBox(height: 30,)
+        const SizedBox(height: 30,)
       ],
     );
   }
